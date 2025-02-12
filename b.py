@@ -177,7 +177,7 @@ async def check_website_updates(client):
 
 async def start(client, message):
     """Handle /start command"""
-    if not is_authorized_user(message.from_user.id):
+    if not is_authorized_user(message.from_user.id) and not is_authorized_channel(message.chat.id):
         await message.reply_text("❌ You are not authorized to use this bot.")
         return
 
@@ -192,16 +192,8 @@ async def start(client, message):
 
 async def track(client, message):
     """Handle /track command"""
-    if not is_authorized_user(message.from_user.id):
+    if not is_authorized_user(message.from_user.id) and not is_authorized_channel(message.chat.id):
         await message.reply_text("❌ You are not authorized to use this command.")
-        return
-
-    if message.chat.type not in ["private", "channel"]:
-        await message.reply_text("❌ This command can only be used in private chats or authorized channels.")
-        return
-
-    if message.chat.type == "channel" and not is_authorized_channel(message.chat.id):
-        await message.reply_text("❌ This channel is not authorized to use this bot.")
         return
 
     user_id = str(message.from_user.id)
@@ -238,16 +230,8 @@ async def track(client, message):
 
 async def untrack(client, message):
     """Handle /untrack command"""
-    if not is_authorized_user(message.from_user.id):
+    if not is_authorized_user(message.from_user.id) and not is_authorized_channel(message.chat.id):
         await message.reply_text("❌ You are not authorized to use this command.")
-        return
-
-    if message.chat.type not in ["private", "channel"]:
-        await message.reply_text("❌ This command can only be used in private chats or authorized channels.")
-        return
-
-    if message.chat.type == "channel" and not is_authorized_channel(message.chat.id):
-        await message.reply_text("❌ This channel is not authorized to use this bot.")
         return
 
     user_id = str(message.from_user.id)
@@ -272,16 +256,8 @@ async def untrack(client, message):
 
 async def list_urls(client, message):
     """Handle /list command"""
-    if not is_authorized_user(message.from_user.id):
+    if not is_authorized_user(message.from_user.id) and not is_authorized_channel(message.chat.id):
         await message.reply_text("❌ You are not authorized to use this command.")
-        return
-
-    if message.chat.type not in ["private", "channel"]:
-        await message.reply_text("❌ This command can only be used in private chats or authorized channels.")
-        return
-
-    if message.chat.type == "channel" and not is_authorized_channel(message.chat.id):
-        await message.reply_text("❌ This channel is not authorized to use this bot.")
         return
 
     user_id = str(message.from_user.id)
@@ -296,16 +272,8 @@ async def list_urls(client, message):
 
 async def list_documents(client, message):
     """Handle /documents command"""
-    if not is_authorized_user(message.from_user.id):
+    if not is_authorized_user(message.from_user.id) and not is_authorized_channel(message.chat.id):
         await message.reply_text("❌ You are not authorized to use this command.")
-        return
-
-    if message.chat.type not in ["private", "channel"]:
-        await message.reply_text("❌ This command can only be used in private chats or authorized channels.")
-        return
-
-    if message.chat.type == "channel" and not is_authorized_channel(message.chat.id):
-        await message.reply_text("❌ This channel is not authorized to use this bot.")
         return
 
     user_id = str(message.from_user.id)
@@ -409,9 +377,9 @@ def main():
     """Main application"""
     app = Client(
         "my_bot",
-        api_id="",
-        api_hash="",
-        bot_token=""
+        api_id="22182189",
+        api_hash="5e7c4088f8e23d0ab61e29ae11960bf5",
+        bot_token="7105873437:AAGGO6n7JbyePc5cVsG9M0b5WoQS3Gs7MeM"
     )
 
     # Add command handlers
