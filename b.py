@@ -22,7 +22,7 @@ USER_DATA_FILE = 'user_data.json'
 CHANNELS_FILE = 'authorized_channels.json'  # File to store authorized channel IDs
 SUDO_USERS_FILE = 'sudo_users.json'  # File to store sudo users
 
-OWNER_ID = '6556141430'  # Replace with your Telegram ID
+OWNER_ID = 6556141430  # Replace with your Telegram ID
 
 def is_authorized_user(user_id):
     """Check if the user is the owner or a sudo user"""
