@@ -377,9 +377,9 @@ def main():
     """Main application"""
     app = Client(
         "my_bot",
-        api_id="22182189",
-        api_hash="5e7c4088f8e23d0ab61e29ae11960bf5",
-        bot_token="7105873437:AAGGO6n7JbyePc5cVsG9M0b5WoQS3Gs7MeM"
+        api_id="",
+        api_hash="",
+        bot_token=""
     )
 
     # Add command handlers
