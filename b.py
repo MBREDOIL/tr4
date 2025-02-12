@@ -264,13 +264,6 @@ async def untrack(client, message):
         if u['url'] != url
     ]
 
-    if len(user_data[user_id]
-original_count = len(user_data[user_id]['tracked_urls'])
-    user_data[user_id]['tracked_urls'] = [
-        u for u in user_data[user_id]['tracked_urls']
-        if u['url'] != url
-    ]
-
     if len(user_data[user_id]['tracked_urls']) < original_count:
         save_user_data(user_data)
         await message.reply_text(f"❎ Tracking stopped: {url}")
