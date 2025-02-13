@@ -103,7 +103,7 @@ def extract_documents(html_content, base_url):
 
         if any(absolute_url.lower().endswith(ext) for ext in document_extensions):
             # Use link text or filename as document name
-            if not link_text:
+            if not link_text, parsed_uri = urlparse(url):
                 filename = os.path.basename(absolute_url)
                 link_text = os.path.splitext(filename)[0]
             documents.append({
