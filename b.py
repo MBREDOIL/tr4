@@ -13,7 +13,7 @@ import requests.utils as requests_utils
 
 # Setup logging
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname=s - %(message=s',
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
 logger = logging.getLogger(__name__)
@@ -103,7 +103,7 @@ def extract_documents(html_content, base_url):
 
         if any(absolute_url.lower().endswith(ext) for ext in document_extensions):
             # Use link text or filename as document name
-            if not link_text, parsed_uri = urlparse(url):
+            if not link_text:
                 filename = os.path.basename(absolute_url)
                 link_text = os.path.splitext(filename)[0]
             documents.append({
